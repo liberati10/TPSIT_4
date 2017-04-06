@@ -1,22 +1,23 @@
-package finestre1;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package naviga;
 
 /**
  *
- * @author studente_2
+ * @author studente
  */
 public class Finestra extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Finestra
-     */
+    private int x1=0;
+    private int x2=0;
+    private int y1=0;
+    private int y2=0;
     public Finestra() {
         initComponents();
+        
+        
     }
 
     /**
@@ -28,33 +29,207 @@ public class Finestra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        testo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        Barca = new javax.swing.JLabel();
+        Sopra = new javax.swing.JButton();
+        Sinistra = new javax.swing.JButton();
+        Sotto = new javax.swing.JButton();
+        Destra = new javax.swing.JButton();
+        Velocita = new javax.swing.JSlider();
+        AVVIA = new javax.swing.JButton();
+        FERMA = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/naviga/nave.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        testo.setFont(new java.awt.Font("Linux Libertine G", 0, 12)); // NOI18N
-        testo.setForeground(new java.awt.Color(1, 1, 1));
-        testo.setText("Sono una finestra");
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+
+        Barca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/naviga/nave-iloveimg-resized.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Barca)
+                .addContainerGap(343, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(273, Short.MAX_VALUE)
+                .addComponent(Barca)
+                .addContainerGap())
+        );
+
+        Sopra.setText("^");
+        Sopra.setActionCommand("2");
+        Sopra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SopraActionPerformed(evt);
+            }
+        });
+
+        Sinistra.setText("<");
+        Sinistra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SinistraActionPerformed(evt);
+            }
+        });
+
+        Sotto.setText("v");
+        Sotto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SottoActionPerformed(evt);
+            }
+        });
+
+        Destra.setText(">");
+        Destra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DestraActionPerformed(evt);
+            }
+        });
+
+        AVVIA.setText("AVVIA");
+        AVVIA.setToolTipText("");
+        AVVIA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AVVIAActionPerformed(evt);
+            }
+        });
+
+        FERMA.setText("FERMA");
+        FERMA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FERMAActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("   VELOCITA'   ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(testo)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Sopra)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Sotto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addGap(65, 65, 65))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(Sinistra)
+                        .addGap(50, 50, 50)
+                        .addComponent(Destra)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Velocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(AVVIA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(FERMA))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 19, Short.MAX_VALUE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(testo)
-                .addContainerGap(150, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AVVIA)
+                    .addComponent(FERMA))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Sopra)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Sinistra)
+                        .addComponent(Destra))
+                    .addComponent(Velocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sotto)
+                    .addComponent(jLabel3))
+                .addGap(50, 50, 50))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SopraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SopraActionPerformed
+        
+    }//GEN-LAST:event_SopraActionPerformed
+
+    private void SinistraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinistraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SinistraActionPerformed
+
+    private void SottoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SottoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SottoActionPerformed
+
+    private void DestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DestraActionPerformed
+
+    private void FERMAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FERMAActionPerformed
+  
+    this.Sinistra.setEnabled(false);
+    this.Sotto.setEnabled(false);
+    this.Destra.setEnabled(false);
+    this.AVVIA.setEnabled(true);
+    this.FERMA.setEnabled(false);
+    this.Velocita.setEnabled(false);
+    this.Barca.setEnabled(false);
+    
+    this.Barca.setLocation(x1,y1);
+    
+
+    }//GEN-LAST:event_FERMAActionPerformed
+
+    private void AVVIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AVVIAActionPerformed
+    this.Sopra.setEnabled(true);
+    this.Sinistra.setEnabled(true);
+    this.Sotto.setEnabled(true);
+    this.Destra.setEnabled(true);
+    this.AVVIA.setEnabled(false);
+    this.FERMA.setEnabled(true);
+    this.Velocita.setEnabled(true);
+    this.Barca.setEnabled(true);
+    
+    this.x1=this.Barca.getX();
+    this.y1=this.Barca.getY();
+    this.x1=this.x2;
+    this.y1=this.y2;
+    
+    }//GEN-LAST:event_AVVIAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +267,17 @@ public class Finestra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel testo;
+    private javax.swing.JButton AVVIA;
+    private javax.swing.JLabel Barca;
+    private javax.swing.JButton Destra;
+    private javax.swing.JButton FERMA;
+    private javax.swing.JButton Sinistra;
+    private javax.swing.JButton Sopra;
+    private javax.swing.JButton Sotto;
+    private javax.swing.JSlider Velocita;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
